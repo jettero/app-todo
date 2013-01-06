@@ -263,7 +263,12 @@ sub load_config {
         # and messes up HTTP::Cookies when we try to set cookies on
         # localhost, since it doesn't send them to
         # localhost.localdomain.
+
         $config{site} =~ s/localhost/127.0.0.1/;
+
+        # NOTE: likely it gets this mysterious localhost.localdomain from the
+        # resolver and the /etc/hosts
+
     }
 }
 
