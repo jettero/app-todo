@@ -211,7 +211,7 @@ sub load_config {
     if( $config{extra_config_glob} ) {
         if( $config{extra_config_recurse} and $config{extra_config_recurse} ne "off" ) {
 
-            my $last;
+            my $last = ".";
 
             # build a list of directories where we might find matching hiveminder files
             my @dirs = map { $last = File::Spec->catdir($last, $_) }
